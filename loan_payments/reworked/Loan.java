@@ -5,6 +5,11 @@ import java.util.Calendar;
 import java.util.Date;
 
 public class Loan{
+    public static class LoanUtils {
+      public static int hundredPercent = 100;
+      public static int monthsInYear = 12;
+    }
+
     public static Date addMonth(LoanInfo loanInfo, int monthsToAdd) {
         Calendar cal = Calendar.getInstance();
         cal.setTime(loanInfo.loan_date);
