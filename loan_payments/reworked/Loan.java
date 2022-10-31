@@ -11,6 +11,11 @@ import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.*;
 
 public class Loan_process {
+    public static class LoanUtils {
+      public static int hundredPercent = 100;
+      public static int monthsInYear = 12;
+    }
+
     public static Date addMonth(Date date, int months) {
         Calendar cal = Calendar.getInstance();
         cal.setTime(date);
@@ -49,7 +54,7 @@ public class Loan_process {
     }
 
     private static double get_monthly_percent(double percent) {
-        return percent / 100 / 12;
+        return percent / LoanUtils.hundredPercent / LoanUtils.monthsInYear;
     }
 
     public static ArrayList<Schedule> getScheduleList(LoanInfo loanInfo) {
